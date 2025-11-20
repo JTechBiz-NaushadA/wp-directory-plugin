@@ -1,0 +1,348 @@
+/*
+Plugin Name: Company Directory Plugin
+Description: Explore and compare global open banking and open finance standards by Company Directory Plugin.
+Version: 1.0
+Author: Naushad A.
+Author Url: https://www.linkedin.com/in/naushad-ali-2a091725a/
+*/
+
+/* Company list Page */
+.company-archive {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.company-archive h1.archive-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #1d2327;
+}
+.company-archive .archive-para {
+    font-size: 1.2rem;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #000;
+}
+
+/* Filter form */
+#company-filter-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: nowrap; /* Force single line */
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#company-filter-form input[type="text"],
+#company-filter-form select {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    height: 40px;
+    min-width: 160px;
+    box-sizing: border-box;
+}
+
+#company-filter-form .filter-btn {
+    flex: 0 0 120px;
+    background: #144796;
+    color: #fff;
+    border: none;
+    height: 40px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#company-filter-form .filter-btn:hover {
+    background: #f58232;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    #company-filter-form {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #company-filter-form input[type="text"],
+    #company-filter-form select,
+    #company-filter-form .filter-btn {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+
+/* Company list */
+.company-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.company-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 20px;
+    transition: all 0.25s ease-in-out;
+    border: 1px solid #e5e5e5;
+}
+
+.company-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.company-card img {
+    flex: 0 0 220px;
+    height: 160px;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.company-card-content {
+    flex: 1;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.company-card-content h2 {
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+    color: #144796;
+}
+
+.company-card-content p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.company-card-content .read-more {
+    color: #f58232;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.company-card-content .read-more:hover {
+    text-decoration: underline;
+}
+
+.company-meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* Responsive view */
+@media (max-width: 768px) {
+    .company-card {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .company-card img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+.company-card-content {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company-card-content h2 {
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+    color: #144796;
+}
+
+.company-card-content h2 a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.company-card-content h2 a:hover {
+    text-decoration: underline;
+}
+
+.company-card-content p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.company-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: auto;
+}
+
+.view-details {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #0073aa;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease-in-out;
+}
+
+.view-details:hover {
+    background: #005a87;
+}
+
+/* Single Page */
+.company-single-wrapper {
+    background: #f7f9fb;
+    padding: 60px 0;
+}
+.company-single {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+.company-single:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.company-single h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    text-align: center;
+	padding-left: 20px;
+    padding-right: 20px;
+}
+.company-subheader {
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+.company-thumb {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.company-thumb img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.company-taxonomies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #f0f6fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+.company-taxonomies p {
+    margin: 0;
+    color: #000;
+}
+.company-taxonomies strong {
+    color: #144796;
+}
+.company-description {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+}
+.company-meta-section {
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid #eef2f5;
+}
+.company-meta-section h2 {
+    font-size: 1.5rem;
+    color: #144796;
+    margin-bottom: 20px;
+    border-left: 4px solid #f58232;
+    padding-left: 10px;
+}
+.meta-field {
+    margin-bottom: 9px;
+    background: #ebf3ff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: background 0.2s ease-in-out;
+}
+.meta-field:hover {
+    background: #f0f6fb;
+}
+.meta-field h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1d2327;
+    margin-bottom: 6px;
+}
+.meta-field .meta-value {
+    font-size: 0.95rem;
+    color: #000;
+    line-height: 1.6;
+}
+.meta-field .meta-value p {
+    margin-top: 10px;
+}
+.meta-value a {
+    color: #0073aa;
+    text-decoration: none;
+}
+.meta-value a:hover {
+    text-decoration: underline;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 600;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .company-single {
+        padding: 25px 15px;
+    }
+    .company-single h1 {
+        font-size: 1.8rem;
+    }
+}
